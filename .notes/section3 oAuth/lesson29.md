@@ -1,0 +1,1 @@
+- Console log information returned by "Google Auth".
