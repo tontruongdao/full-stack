@@ -1,0 +1,1 @@
+- Add "nodemon" package to project.
