@@ -1,0 +1,1 @@
+- Installed mongoose and did intiail MongoDB setup.
