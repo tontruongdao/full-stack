@@ -1,0 +1,1 @@
+- Finished authentication flow using cookie data.
