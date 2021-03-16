@@ -1,0 +1,1 @@
+- Created first mongo class, using mongoose.
