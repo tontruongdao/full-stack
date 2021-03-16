@@ -1,0 +1,2 @@
+- Save first user in mongoDB, needed to use promises.
+- Used control flow to not duplicate userID.
