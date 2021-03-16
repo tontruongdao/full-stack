@@ -1,0 +1,1 @@
+- Tested that authentication works.
