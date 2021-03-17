@@ -1,0 +1,1 @@
+- Fixed proxy bug on heroku
