@@ -1,0 +1,1 @@
+- Created "react-app" and created script to run both server at the same time
