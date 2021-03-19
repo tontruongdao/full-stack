@@ -1,0 +1,1 @@
+- Added authReducer to App.js
