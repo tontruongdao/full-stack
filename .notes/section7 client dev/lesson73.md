@@ -1,0 +1,1 @@
+- Did reducer template and added "authReducer"
