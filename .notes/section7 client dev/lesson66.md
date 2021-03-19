@@ -1,0 +1,1 @@
+- Refactored promise from ".then" notation to async/await.
