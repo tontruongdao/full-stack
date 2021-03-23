@@ -1,9 +1,15 @@
 import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 const App = () => {
   return (
     <div>
-      Hi there! 
+      <BrowserRouter>
+        <div>
+          <Route exact path ='/' component={}/>
+          <Route path='/surveys' component={}/>
+        </div>
+      </BrowserRouter>
     </div>
   )
 }
