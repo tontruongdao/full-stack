@@ -5,13 +5,13 @@ import Header from './Header'
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <BrowserRouter>
         <div>
           <Header/>
-          <Route exact path ='/' component={}/>
+          {/* <Route exact path ='/' component={}/>
           <Route exact path='/surveys' component={}/>
-          <Route path='/surveys/new' component={}/>
+          <Route path='/surveys/new' component={}/> */}
         </div>
       </BrowserRouter>
     </div>
