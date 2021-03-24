@@ -1,0 +1,2 @@
+- BE: added redirect once user logs in in "authRoutes"
+- FE: Worked on login in "Header" component.
