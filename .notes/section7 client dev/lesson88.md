@@ -1,0 +1,1 @@
+- Refactored "fetchUser" reducer.
