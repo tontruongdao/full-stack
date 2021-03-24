@@ -1,0 +1,1 @@
+- Added wired authReducer to action.
