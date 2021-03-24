@@ -1,0 +1,1 @@
+- Hooked action "FETCH_USER" to reducer.
