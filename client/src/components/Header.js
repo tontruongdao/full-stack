@@ -16,7 +16,7 @@ class Header extends Component {
             default:
                 return (
                     <li>
-                        <a href="">Logout</a>
+                        <a>Logout</a>
                     </li>
                 )
         }
@@ -31,7 +31,7 @@ class Header extends Component {
                             Emailz
                         </a>
                         <ul className="right">
-                            {this.renderContent}
+                            {this.renderContent()}
                         </ul>
                     </div>
                 </nav>
