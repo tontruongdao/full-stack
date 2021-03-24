@@ -1,0 +1,1 @@
+- Refactored "functional" component to a "class" base component to use lifecycle "componentDidMount".
