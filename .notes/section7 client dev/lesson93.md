@@ -1,0 +1,1 @@
+- Worked on logout redirect.
