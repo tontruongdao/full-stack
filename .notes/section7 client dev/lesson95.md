@@ -1,0 +1,2 @@
+- Worked on Landing component
+- Added "Link" from react-router-dom, and used Ternari to have conditional rendering
