@@ -1,1 +1,1 @@
-- Created environment variables.
+- Added environment keys in server side and Heroku.

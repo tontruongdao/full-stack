@@ -1,0 +1,1 @@
+- Created "Payments" component from stripe checkout.
