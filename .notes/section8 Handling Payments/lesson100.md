@@ -1,0 +1,1 @@
+- Added "react-stripe-checkout" library to the front-end application.
