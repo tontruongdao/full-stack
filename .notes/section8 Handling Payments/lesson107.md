@@ -1,0 +1,2 @@
+- Created handleToken action.
+- Attached handleToken action to Payments components.
