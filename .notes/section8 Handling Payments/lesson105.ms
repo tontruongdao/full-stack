@@ -1,0 +1,2 @@
+- Added button design in Header.
+- Added 2 more props to Payments components.
