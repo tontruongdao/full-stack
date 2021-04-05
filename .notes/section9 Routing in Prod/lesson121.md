@@ -1,0 +1,1 @@
+- Added configuration in BE's "package.json".
