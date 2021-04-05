@@ -1,0 +1,4 @@
+- Created new routes for billing
+- Installed "body-parser" and "stripe" package in the BE.
+- Added "body-parser" middleware in BE's index.js
+- Added "POST" route for billingRoute in BE.
