@@ -1,0 +1,3 @@
+- Transformed argument from POST route to asynchronous.
+- Updated "User" schema in Mongoose.
+- Coded "response" object to FE.
