@@ -1,0 +1,1 @@
+- Added "requireCredits" middleware to survey POST route.
