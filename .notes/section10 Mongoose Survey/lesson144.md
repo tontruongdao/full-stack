@@ -1,0 +1,2 @@
+- Worked on Mailer class.
+- Added "formatAddresses" method.

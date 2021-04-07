@@ -4,11 +4,33 @@ const helper = sendgrid.mail;
 const keys = require('../config/keys')
 
 class Mailer extends helper.Mail {
-
     
-    // this.from_email = new helper.Email('ton.truong.dao@outlook.com');
+    constructor({ subject, recipients }, content){
+        super();
 
+        this.from_email = new helper.Email('ton.truong.dao@outlook.com');
+        this.subject = subject;
+        this.body = new helper.Content('text/html', content)
+        this.recipients = this.formatAddresses(recipients)
 
+        this.addContent(this.body)
+        this.addClickTracking()
+        this.addRecipients()
+    }
+
+    formatAdresses(recipients) {
+        return recipients.map(({ email }) => {
+            return new helper.Email(email)
+        })
+    }
+
+    addClickTracking() {
+        const trackingSettings = new Helper.TrackingSettings()
+        const clickTracking = new helper.ClickTracking(true, true)
+
+        trackingSettings.setClickTracking(clickTracking)
+        this.addTrackingSettings(trackingSettings)
+    }
 }
 
 module.exports = Mailer;
