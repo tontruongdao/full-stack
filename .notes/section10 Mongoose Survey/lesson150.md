@@ -1,0 +1,1 @@
+- Added redirect to amail Template.
