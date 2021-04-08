@@ -1,0 +1,1 @@
+- More work on "redux-form" and refactored code with "lodash" library.
