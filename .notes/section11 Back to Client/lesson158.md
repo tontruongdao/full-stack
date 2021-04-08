@@ -1,0 +1,2 @@
+- Installed redux-form to application
+- Created component SurveyNew
