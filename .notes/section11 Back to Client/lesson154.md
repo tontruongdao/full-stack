@@ -1,0 +1,1 @@
+- Created new Dashboard component.
