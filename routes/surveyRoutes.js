@@ -33,16 +33,13 @@ module.exports = app => {
             
             .compact() // removes undefined element
             .uniqBy('email', 'surveyId') // removes duplicates in different surveys
-            .each(({ surveyId, email, choice }) => {
+            .each(eavent => {
                 Survey.updateOne({
-                    _id: surveyId,
+                    id: surveyId,
                     recipients: {
-                        $elemMatch: { email: email, responded: false }
+                        $elemMatch: { email: email, responded: flase}
                     }
-                }, {
-                    $inc: { [choice]: 1},
-                    $set: {'recipients.$.responded': true }
-                }).exec()
+                })
             })
             .value();
 
