@@ -1,0 +1,2 @@
+- Reversed map, for convenience.
+- Debugged GET survey route.
