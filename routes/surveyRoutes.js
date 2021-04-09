@@ -1,7 +1,7 @@
 const { URL } = require('url')
 const mongoose = require('mongoose');
 const _ = require('lodash');
-const { Path }  = require('path-parser')
+const { Path } = require('path-parser')
 const requireLogin = require('../middlewares/requireLogin')
 const requireCredits = require('../middlewares/requireCredits')
 
@@ -18,10 +18,37 @@ module.exports = app => {
 
     // look instruction in "lesson186.md" to use webhook.
     app.post('/api/surveys/webhooks', (req, res) => {
-        const events = _.map(req.body, () => {
-            const pathname = new URL(event.url).pathname
-            const p = new Path('/api/surveys/:surveyId/:choice') // To extract data from URL
-        })
+
+        const p = new Path('/api/surveys/:surveyId/:choice') // To extract data from URL
+        
+        const events = _.chain(req.body) //Chain helper using "lodash" library
+            .map(({ email, url }) => {
+            
+                const match = p.test(new URL(url).pathname);
+
+                if (match) {
+                    return { email, surveyId: match.surveyId, choice: match.choice };
+                }
+            })
+            
+            .compact() // removes undefined element
+            .uniqBy('email', 'surveyId') // removes duplicates in different surveys
+            .each(({ surveyId, email, choice }) => {
+                Survey.updateOne({
+                    _id: surveyId,
+                    recipients: {
+                        $elemMatch: { email: email, responded: false }
+                    }
+                }, {
+                    $inc: { [choice]: 1},
+                    $set: {'recipients.$.responded': true }
+                }).exec()
+            })
+            .value();
+
+        console.log(events);
+
+        res.send({})
     })
 
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {

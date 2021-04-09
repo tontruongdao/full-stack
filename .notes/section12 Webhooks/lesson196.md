@@ -1,0 +1,2 @@
+- Refactored events with "chain" method from "lodash".
+- Added MongoDB query to update database.
