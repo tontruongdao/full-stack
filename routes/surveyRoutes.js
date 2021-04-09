@@ -13,6 +13,12 @@ module.exports = app => {
         res.send('Thanks for voting!')
     })
 
+    // look instruction in "lesson186.md" to use webhook.
+    app.post('/api/surveys/webhooks', (req, res) => {
+        console.log(req.body)
+        res.send({})
+    })
+
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
 
         // Taking information from the "request object"
