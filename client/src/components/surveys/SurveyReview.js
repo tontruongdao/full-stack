@@ -2,10 +2,16 @@ import { STATES } from 'mongoose'
 import React from 'react'
 import { connect } from 'react-redux'
 
-const SurveyReview = ({ onCancel }) => {
+const SurveyReview = ({ onCancel, formValues }) => {
     return(
         <div>
             <h5>Please confirm entries</h5>
+            <div>
+                <div>
+                    <label>Survey Title</label>
+                    <div>{formValues.title}</div>
+                </div>
+            </div>
             <button 
                 className="yellow darken-3 btn-flat"
                 onClick={onCancel}>
@@ -15,8 +21,8 @@ const SurveyReview = ({ onCancel }) => {
     )
 }
 
-function mapStateToProps() {
-    return { formValues: STATES.form.surveyForm.values}
+function mapStateToProps(state) {
+    return { formValues: state.form.surveyForm.values}
 }
 
 export default connect(mapStateToProps)(SurveyReview)
