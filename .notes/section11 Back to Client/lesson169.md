@@ -1,0 +1,2 @@
+- Rendered validation error message in "SurveyField" component from "meta" object.
+- Created "validateEmails.js" utility function.
