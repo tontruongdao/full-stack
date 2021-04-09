@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ input, label, meta: {error, touch } }) => {
+export default ({ input, label, meta: {error, touched } }) => {
 
     // Will render the error message, as it is a string, if touched is true.
     return (
