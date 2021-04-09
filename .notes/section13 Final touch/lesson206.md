@@ -1,0 +1,2 @@
+- Create "get" route to fetch all the survey from user.
+- Omitted "recipient" field from "mongoose" query.

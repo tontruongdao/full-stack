@@ -12,6 +12,13 @@ const Survey = mongoose.model('surveys')
 
 module.exports = app => {
 
+    app.get('/api/survey', requireLogin, async (req, res) => {
+        const surveys = await Survey.find({ _user: req.user.id })
+            .select({ recipients: false }) // Selecting only list of surveys without recipient field. 
+
+        res.send(surveys)
+    })
+
     app.get('/api/surveys/thanks', (req, res) => {
         res.send('Thanks for voting!')
     })
@@ -37,7 +44,7 @@ module.exports = app => {
                 Survey.updateOne({
                     id: surveyId,
                     recipients: {
-                        $elemMatch: { email: email, responded: flase}
+                        $elemMatch: { email: email, responded: false}
                     }
                 })
             })
