@@ -1,21 +1,35 @@
 import { STATES } from 'mongoose'
 import React from 'react'
 import { connect } from 'react-redux'
+import _ from 'lodash'
 
-const SurveyReview = ({ onCancel, formValues }) => {
+import * as actions from '../../actions'
+import formFields from './formFields'
+
+const SurveyReview = ({ onCancel, formValues, submitSurvey }) => {
+
+    const reviewFields = _.map(formFields, ({ name, label }) => {
+        return (
+            <div key={name}>
+                <label>{label}</label>
+                <div>{formValues[name]}</div>
+            </div>
+        )
+    })
+
     return(
         <div>
             <h5>Please confirm entries</h5>
-            <div>
-                <div>
-                    <label>Survey Title</label>
-                    <div>{formValues.title}</div>
-                </div>
-            </div>
+            {reviewFields}
             <button 
                 className="yellow darken-3 btn-flat"
                 onClick={onCancel}>
                 Back
+            </button>
+            <button className="green btn-flat right"
+                    onClick={() => submitSurvey(formValues)}>
+                Send Survey
+                <i className="material-icons right">email</i>
             </button>
         </div>
     )
@@ -25,4 +39,4 @@ function mapStateToProps(state) {
     return { formValues: state.form.surveyForm.values}
 }
 
-export default connect(mapStateToProps)(SurveyReview)
+export default connect(mapStateToProps, actions)(SurveyReview)

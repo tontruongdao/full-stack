@@ -4,19 +4,15 @@ import { Link } from 'react-router-dom'
 import _ from 'lodash'
 
 import SurveyField from './SurveyField'
+import formFields from './formFields'
 import validateEmails from '../../utils/validateEmails'
 
-const FIELDS = [
-    { label: 'Survey Title', name: 'title'},
-    { label: 'Subject Line', name: 'subject'},
-    { label: 'Email body', name: 'body'},
-    { label: 'Recipient list', name: 'emails'}
-]
+
 
 class SurveyForm extends Component {
     
     renderFields() {
-        return _.map(FIELDS, ({ label, name }) => {
+        return _.map(formFields, ({ label, name }) => {
             return <Field 
                         key={name}
                         component={SurveyField}
@@ -54,7 +50,7 @@ function validate(values) {
 
     errors.emails = validateEmails(values.emails || '')
 
-    _.each(FIELDS, ({ name }) => {
+    _.each(formFields, ({ name }) => {
         if(!values[name]){
             errors[name] = 'You must provide a value'
         }
