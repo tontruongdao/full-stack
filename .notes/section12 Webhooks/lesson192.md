@@ -1,0 +1,2 @@
+- Added "lodash" and "path-parser" in BE
+- Extracted data from SendGrid response.

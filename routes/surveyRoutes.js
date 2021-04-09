@@ -1,4 +1,7 @@
+const { URL } = require('url')
 const mongoose = require('mongoose');
+const _ = require('lodash');
+const { Path }  = require('path-parser')
 const requireLogin = require('../middlewares/requireLogin')
 const requireCredits = require('../middlewares/requireCredits')
 
@@ -15,8 +18,10 @@ module.exports = app => {
 
     // look instruction in "lesson186.md" to use webhook.
     app.post('/api/surveys/webhooks', (req, res) => {
-        console.log(req.body)
-        res.send({})
+        const events = _.map(req.body, () => {
+            const pathname = new URL(event.url).pathname
+            const p = new Path('/api/surveys/:surveyId/:choice') // To extract data from URL
+        })
     })
 
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
