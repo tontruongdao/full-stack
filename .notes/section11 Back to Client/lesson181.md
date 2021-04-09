@@ -1,0 +1,3 @@
+- Cleared values in "SurveyNew" form.
+- Renamed "emails" to "recipients" in form to match with BE.
+- Added redirect with "history" object from "withRouter" helper
