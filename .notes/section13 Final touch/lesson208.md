@@ -1,0 +1,2 @@
+- Added surveys REDUCER & ACTION.
+- Created SurveyList component
